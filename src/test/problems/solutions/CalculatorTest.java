@@ -31,4 +31,12 @@ class CalculatorTest {
         assertEquals(-14, result);
 
     }
+
+    @Test
+    @DisplayName("Multiply two numbers")
+    void multiply() {
+        Calculator calc = new Calculator();
+        int product = calc.multiply(2, 2);
+        assertEquals(4, product);
+    }
 }
