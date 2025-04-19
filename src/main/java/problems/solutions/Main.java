@@ -6,9 +6,9 @@ public class Main {
             hugo.bark();
             hugo.breed();
 
-            Dog buddy = new Dog("Buddy", "German shepherd");
-            buddy.bark();
-            buddy.breed();
+//            Dog buddy = new Dog("Buddy", "German shepherd");
+//            buddy.bark();
+//            buddy.breed();
         }
     }
 
