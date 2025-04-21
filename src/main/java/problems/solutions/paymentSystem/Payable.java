@@ -1,4 +1,6 @@
 package problems.solutions.paymentSystem;
 
-public class Payable {
+public interface Payable {
+    void pay(double amount);
+    void refund(double amount);
 }
