@@ -1,35 +1,9 @@
 package problems.solutions.dataStructures;
 
- public class Tree {
-    private class Node {
-        // Tree
-        // Similar to linked lists
-        // Node (value, leftChild, rightChild)
-        // insert(value)
-        // find(value):boolean
-
-        //var current = root
-        // compare the value to root, if smaller >> go to the lft, if bigger to the right
-
-        private int value;
-        private Node leftChild;
-        private Node rightChild;
-        public Node(int value, Node leftChild, Node rightChild) {
-            this.value = value;
-        }
-
-        public Node(int value) {
-            this.value = value;
-        }
-
-        @Override
-        public String toString() {
-            return "Node" + value;
-        }
-    }
+public class Tree {
     private Node root;
 
-    public void insert (int value) {
+    public void insert(int value) {
         var node = new Node(value);
         if (root == null) {
             root = node;
@@ -44,17 +18,35 @@ package problems.solutions.dataStructures;
                     break;
                 }
                 current = current.leftChild;
-            }
-                else {
-                    if (current.rightChild == null) {
-                        current.rightChild = node;
-                        break;
-                    }
-                    current = current.rightChild;
-
+            } else {
+                if (current.rightChild == null) {
+                    current.rightChild = node;
+                    break;
+                }
+                current = current.rightChild;
             }
         }
+    }
 
+    public boolean find(int value) {
+        var current = root;
+        while (current != null) {
+            if (value < current.value)
+                current = current.leftChild;
+            else if (value > current.value)
+                current = current.rightChild;
+            else
+                return true;
+        }
+        return false;
+    }
 
+    public void traversePreOrder(Node root) {
+        if (root == null) {
+            return;
+        }
+        System.out.println(root.value);
+        traversePreOrder(root.leftChild); // left
+        traversePreOrder(root.rightChild); // right
     }
 }
