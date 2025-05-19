@@ -41,11 +41,7 @@ public class Tree {
         return false;
     }
 
-    public void traversePreOrder() {
-        traversePreOrder(root);
-    }
-
-    private void traversePreOrder(Node root) {
+    public void traversePreOrder(Node root) {
         if (root == null) {
             return;
         }
@@ -54,18 +50,8 @@ public class Tree {
         traversePreOrder(root.rightChild); // right
     }
 
-    public int height() {
-        return height(root);
+    public String height() {
+        return "";
     }
 
-    private int height(Node root) {
-        if (root == null) {
-            return -1;
-        }
-        if (root.leftChild == null && root.rightChild==null) {
-            return 0;
-        } else {
-            return 1 + Math.max(height(root.leftChild), height(root.rightChild));
-        }
-    }
 }
